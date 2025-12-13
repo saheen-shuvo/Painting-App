@@ -100,6 +100,7 @@
             this.BtnEllipse.Size = new System.Drawing.Size(71, 59);
             this.BtnEllipse.TabIndex = 2;
             this.BtnEllipse.UseVisualStyleBackColor = true;
+            this.BtnEllipse.Click += new System.EventHandler(this.BtnEllipse_Click);
             // 
             // BtnLine
             // 

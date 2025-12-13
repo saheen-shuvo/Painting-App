@@ -19,6 +19,7 @@ namespace SpillBucketA3
         Pen p = new Pen(Color.Black, 1);
         Pen Eraser = new Pen(Color.White, 10);
         int index;
+        int x, y, sx, sy, cx, cy;
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +32,10 @@ namespace SpillBucketA3
         private void Pic_MouseDown(object sender, MouseEventArgs e)
         {
             paint = true;
-            py = e.Location; 
+            py = e.Location;
+
+            cx = e.X;
+            cy = e.Y;
         }
 
         private void Pic_MouseMove(object sender, MouseEventArgs e)
@@ -52,16 +56,33 @@ namespace SpillBucketA3
                 }
             }
             Pic.Refresh();
+
+            x = e.X;
+            y = e.Y;
+            sx = e.X - cx;
+            sy = e.Y - cy;
         }
 
         private void Pic_MouseUp(object sender, MouseEventArgs e)
         {
             paint = false;
+
+            sx = x - cx;
+            sy = y - cy;
+            if(index == 3)
+            {
+                g.DrawEllipse(p, cx, cy, sx, sy);
+            }
         }
 
         private void BtnEraser_Click(object sender, EventArgs e)
         {
             index = 2;
+        }
+
+        private void BtnEllipse_Click(object sender, EventArgs e)
+        {
+            index = 3;
         }
 
         private void BtnPencil_Click(object sender, EventArgs e)
