@@ -29,6 +29,16 @@ namespace SpillBucketA3
             Pic.Image = bm;
         }
 
+        private void BtnRectangle_Click(object sender, EventArgs e)
+        {
+            index = 4;
+        }
+
+        private void BtnLine_Click(object sender, EventArgs e)
+        {
+            index = 5;
+        }
+
         private void Pic_MouseDown(object sender, MouseEventArgs e)
         {
             paint = true;
@@ -72,6 +82,14 @@ namespace SpillBucketA3
             if(index == 3)
             {
                 g.DrawEllipse(p, cx, cy, sx, sy);
+            }
+            if(index == 4)
+            {
+                g.DrawRectangle(p, cx, cy, sx, sy);
+            }
+            if(index == 5)
+            {
+                g.DrawLine(p, cx, cy, x, y);
             }
         }
 

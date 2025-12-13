@@ -114,6 +114,7 @@
             this.BtnLine.Size = new System.Drawing.Size(74, 59);
             this.BtnLine.TabIndex = 3;
             this.BtnLine.UseVisualStyleBackColor = true;
+            this.BtnLine.Click += new System.EventHandler(this.BtnLine_Click);
             // 
             // BtnRectangle
             // 
@@ -127,6 +128,7 @@
             this.BtnRectangle.Size = new System.Drawing.Size(65, 59);
             this.BtnRectangle.TabIndex = 4;
             this.BtnRectangle.UseVisualStyleBackColor = true;
+            this.BtnRectangle.Click += new System.EventHandler(this.BtnRectangle_Click);
             // 
             // BtnEraser
             // 
