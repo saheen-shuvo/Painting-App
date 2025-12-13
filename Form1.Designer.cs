@@ -180,6 +180,7 @@
             this.BtnClear.TabIndex = 9;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // Pic
             // 
@@ -189,6 +190,7 @@
             this.Pic.Size = new System.Drawing.Size(1079, 626);
             this.Pic.TabIndex = 1;
             this.Pic.TabStop = false;
+            this.Pic.Paint += new System.Windows.Forms.PaintEventHandler(this.Pic_Paint);
             this.Pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseDown);
             this.Pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseMove);
             this.Pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseUp);

@@ -39,6 +39,33 @@ namespace SpillBucketA3
             index = 5;
         }
 
+        private void Pic_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            if (paint)
+            {
+                if (index == 3)
+                {
+                    g.DrawEllipse(p, cx, cy, sx, sy);
+                }
+                if (index == 4)
+                {
+                    g.DrawRectangle(p, cx, cy, sx, sy);
+                }
+                if (index == 5)
+                {
+                    g.DrawLine(p, cx, cy, x, y);
+                }
+            }
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            g.Clear(Color.White);
+            Pic.Image = bm;
+            index = 0;
+        }
+
         private void Pic_MouseDown(object sender, MouseEventArgs e)
         {
             paint = true;
