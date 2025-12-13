@@ -73,6 +73,7 @@
             this.BtnColor.Size = new System.Drawing.Size(74, 59);
             this.BtnColor.TabIndex = 0;
             this.BtnColor.UseVisualStyleBackColor = true;
+            this.BtnColor.Click += new System.EventHandler(this.BtnColor_Click);
             // 
             // BtnPencil
             // 

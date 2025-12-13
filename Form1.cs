@@ -22,6 +22,7 @@ namespace SpillBucketA3
         int x, y, sx, sy, cx, cy;
 
         Color New_Color;
+        ColorDialog cd = new ColorDialog();
         public Form1()
         {
             InitializeComponent();
@@ -116,6 +117,14 @@ namespace SpillBucketA3
                 Point pt = set_Point(Pic, e.Location);
                 Fill(bm, pt.X, pt.Y, New_Color);
             }
+        }
+
+        private void BtnColor_Click(object sender, EventArgs e)
+        {
+            cd.ShowDialog();
+            New_Color = cd.Color;
+            Pic.BackColor = New_Color;
+            p.Color = cd.Color;
         }
 
         private void Pic_MouseDown(object sender, MouseEventArgs e)
