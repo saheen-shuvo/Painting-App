@@ -58,7 +58,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(231, 626);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(231, 803);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // BtnColor
@@ -170,6 +170,7 @@
             this.BtnSave.TabIndex = 7;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // BtnClear
             // 
@@ -189,7 +190,7 @@
             this.Pic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pic.Location = new System.Drawing.Point(231, 0);
             this.Pic.Name = "Pic";
-            this.Pic.Size = new System.Drawing.Size(1079, 626);
+            this.Pic.Size = new System.Drawing.Size(1551, 803);
             this.Pic.TabIndex = 1;
             this.Pic.TabStop = false;
             this.Pic.Paint += new System.Windows.Forms.PaintEventHandler(this.Pic_Paint);
@@ -202,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 626);
+            this.ClientSize = new System.Drawing.Size(1782, 803);
             this.Controls.Add(this.Pic);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "Form1";

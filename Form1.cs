@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,6 +126,17 @@ namespace SpillBucketA3
             New_Color = cd.Color;
             Pic.BackColor = New_Color;
             p.Color = cd.Color;
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            var sfd = new SaveFileDialog();
+            sfd.Filter = "Image(*.jpg)|*.jpg|(*.*)|*.*";
+            if(sfd.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap btm = bm.Clone(new Rectangle(0, 0, Pic.Width, Pic.Height), bm.PixelFormat);
+                btm.Save(sfd.FileName, ImageFormat.Jpeg);
+            }
         }
 
         private void Pic_MouseDown(object sender, MouseEventArgs e)
