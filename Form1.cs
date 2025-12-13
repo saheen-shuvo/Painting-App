@@ -20,6 +20,8 @@ namespace SpillBucketA3
         Pen Eraser = new Pen(Color.White, 10);
         int index;
         int x, y, sx, sy, cx, cy;
+
+        Color New_Color;
         public Form1()
         {
             InitializeComponent();
@@ -64,6 +66,56 @@ namespace SpillBucketA3
             g.Clear(Color.White);
             Pic.Image = bm;
             index = 0;
+        }
+
+        private void BtnPaint_Click(object sender, EventArgs e)
+        {
+            index = 6;
+        }
+
+        static Point set_Point(PictureBox pb, Point pt)
+        {
+            float px = 1f * pb.Width / pb.Width;
+            float py = 1f * pb.Height / pb.Height;
+            return new Point((int)(pt.X * px), (int)(pt.Y * py));
+        }
+        private void Validate(Bitmap bm, Stack<Point> sp, int x, int y, Color Old_Color, Color New_Color)
+        {
+            Color cx = bm.GetPixel(x, y);
+            if(cx == Old_Color)
+            {
+                sp.Push(new Point(x, y));
+                bm.SetPixel(x, y, New_Color);
+            }
+        }
+
+        public void Fill(Bitmap bm, int x, int y, Color New_Clr)
+        {
+            Color Old_Color = bm.GetPixel(x, y);
+            Stack<Point> pixel = new Stack<Point>();
+            pixel.Push(new Point(x, y));
+            bm.SetPixel(x, y, New_Clr);
+            if (Old_Color == New_Clr) return;
+            while(pixel.Count > 0)
+            {
+                Point pt = (Point)pixel.Pop();
+                if(pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
+                {
+                    Validate(bm, pixel, pt.X - 1, pt.Y, Old_Color, New_Clr);
+                    Validate(bm, pixel, pt.X + 1, pt.Y, Old_Color, New_Clr);
+                    Validate(bm, pixel, pt.X, pt.Y - 1, Old_Color, New_Clr);
+                    Validate(bm, pixel, pt.X, pt.Y + 1, Old_Color, New_Clr);
+                }
+            }
+        }
+
+        private void Pic_MouseClick(object sender, MouseEventArgs e)
+        {
+            if(index == 6)
+            {
+                Point pt = set_Point(Pic, e.Location);
+                Fill(bm, pt.X, pt.Y, New_Color);
+            }
         }
 
         private void Pic_MouseDown(object sender, MouseEventArgs e)

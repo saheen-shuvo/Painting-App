@@ -156,6 +156,7 @@
             this.BtnPaint.Size = new System.Drawing.Size(74, 63);
             this.BtnPaint.TabIndex = 6;
             this.BtnPaint.UseVisualStyleBackColor = true;
+            this.BtnPaint.Click += new System.EventHandler(this.BtnPaint_Click);
             // 
             // BtnSave
             // 
@@ -191,6 +192,7 @@
             this.Pic.TabIndex = 1;
             this.Pic.TabStop = false;
             this.Pic.Paint += new System.Windows.Forms.PaintEventHandler(this.Pic_Paint);
+            this.Pic.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseClick);
             this.Pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseDown);
             this.Pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseMove);
             this.Pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Pic_MouseUp);
