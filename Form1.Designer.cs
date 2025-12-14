@@ -37,15 +37,20 @@
             this.BtnRectangle = new System.Windows.Forms.Button();
             this.BtnEraser = new System.Windows.Forms.Button();
             this.BtnPaint = new System.Windows.Forms.Button();
-            this.BtnSave = new System.Windows.Forms.Button();
             this.BtnClear = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbQueue = new System.Windows.Forms.RadioButton();
+            this.rbStack = new System.Windows.Forms.RadioButton();
             this.Pic = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.Controls.Add(this.BtnColor);
             this.flowLayoutPanel1.Controls.Add(this.BtnPencil);
             this.flowLayoutPanel1.Controls.Add(this.BtnEllipse);
@@ -58,7 +63,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(231, 803);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(86, 803);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // BtnColor
@@ -68,9 +73,9 @@
             this.BtnColor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnColor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnColor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnColor.Location = new System.Drawing.Point(3, 3);
+            this.BtnColor.Location = new System.Drawing.Point(3, 100);
             this.BtnColor.Name = "BtnColor";
-            this.BtnColor.Size = new System.Drawing.Size(74, 59);
+            this.BtnColor.Size = new System.Drawing.Size(74, 68);
             this.BtnColor.TabIndex = 0;
             this.BtnColor.UseVisualStyleBackColor = true;
             this.BtnColor.Click += new System.EventHandler(this.BtnColor_Click);
@@ -82,9 +87,9 @@
             this.BtnPencil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPencil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnPencil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnPencil.Location = new System.Drawing.Point(83, 3);
+            this.BtnPencil.Location = new System.Drawing.Point(3, 174);
             this.BtnPencil.Name = "BtnPencil";
-            this.BtnPencil.Size = new System.Drawing.Size(65, 59);
+            this.BtnPencil.Size = new System.Drawing.Size(74, 68);
             this.BtnPencil.TabIndex = 1;
             this.BtnPencil.UseVisualStyleBackColor = true;
             this.BtnPencil.Click += new System.EventHandler(this.BtnPencil_Click);
@@ -96,9 +101,9 @@
             this.BtnEllipse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEllipse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnEllipse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnEllipse.Location = new System.Drawing.Point(154, 3);
+            this.BtnEllipse.Location = new System.Drawing.Point(3, 248);
             this.BtnEllipse.Name = "BtnEllipse";
-            this.BtnEllipse.Size = new System.Drawing.Size(71, 59);
+            this.BtnEllipse.Size = new System.Drawing.Size(74, 68);
             this.BtnEllipse.TabIndex = 2;
             this.BtnEllipse.UseVisualStyleBackColor = true;
             this.BtnEllipse.Click += new System.EventHandler(this.BtnEllipse_Click);
@@ -110,7 +115,7 @@
             this.BtnLine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnLine.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnLine.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnLine.Location = new System.Drawing.Point(3, 68);
+            this.BtnLine.Location = new System.Drawing.Point(3, 322);
             this.BtnLine.Name = "BtnLine";
             this.BtnLine.Size = new System.Drawing.Size(74, 59);
             this.BtnLine.TabIndex = 3;
@@ -124,9 +129,9 @@
             this.BtnRectangle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnRectangle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnRectangle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnRectangle.Location = new System.Drawing.Point(83, 68);
+            this.BtnRectangle.Location = new System.Drawing.Point(3, 387);
             this.BtnRectangle.Name = "BtnRectangle";
-            this.BtnRectangle.Size = new System.Drawing.Size(65, 59);
+            this.BtnRectangle.Size = new System.Drawing.Size(71, 68);
             this.BtnRectangle.TabIndex = 4;
             this.BtnRectangle.UseVisualStyleBackColor = true;
             this.BtnRectangle.Click += new System.EventHandler(this.BtnRectangle_Click);
@@ -138,7 +143,7 @@
             this.BtnEraser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnEraser.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnEraser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnEraser.Location = new System.Drawing.Point(154, 68);
+            this.BtnEraser.Location = new System.Drawing.Point(3, 461);
             this.BtnEraser.Name = "BtnEraser";
             this.BtnEraser.Size = new System.Drawing.Size(71, 59);
             this.BtnEraser.TabIndex = 5;
@@ -152,45 +157,77 @@
             this.BtnPaint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPaint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnPaint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnPaint.Location = new System.Drawing.Point(3, 133);
+            this.BtnPaint.Location = new System.Drawing.Point(3, 526);
             this.BtnPaint.Name = "BtnPaint";
             this.BtnPaint.Size = new System.Drawing.Size(74, 63);
             this.BtnPaint.TabIndex = 6;
             this.BtnPaint.UseVisualStyleBackColor = true;
             this.BtnPaint.Click += new System.EventHandler(this.BtnPaint_Click);
             // 
-            // BtnSave
-            // 
-            this.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
-            this.BtnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnSave.Location = new System.Drawing.Point(154, 133);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(71, 63);
-            this.BtnSave.TabIndex = 7;
-            this.BtnSave.Text = "Save";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
-            // 
             // BtnClear
             // 
             this.BtnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.BtnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.BtnClear.Location = new System.Drawing.Point(83, 133);
+            this.BtnClear.Location = new System.Drawing.Point(3, 595);
             this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(65, 63);
+            this.BtnClear.Size = new System.Drawing.Size(74, 63);
             this.BtnClear.TabIndex = 9;
             this.BtnClear.Text = "Clear";
             this.BtnClear.UseVisualStyleBackColor = true;
             this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // BtnSave
+            // 
+            this.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSave.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
+            this.BtnSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.BtnSave.Location = new System.Drawing.Point(3, 664);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(74, 65);
+            this.BtnSave.TabIndex = 7;
+            this.BtnSave.Text = "Save";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbStack);
+            this.groupBox1.Controls.Add(this.rbQueue);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(74, 91);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            // 
+            // rbQueue
+            // 
+            this.rbQueue.AutoSize = true;
+            this.rbQueue.Location = new System.Drawing.Point(6, 56);
+            this.rbQueue.Name = "rbQueue";
+            this.rbQueue.Size = new System.Drawing.Size(54, 20);
+            this.rbQueue.TabIndex = 1;
+            this.rbQueue.TabStop = true;
+            this.rbQueue.Text = "BFS";
+            this.rbQueue.UseVisualStyleBackColor = true;
+            // 
+            // rbStack
+            // 
+            this.rbStack.AutoSize = true;
+            this.rbStack.Location = new System.Drawing.Point(6, 21);
+            this.rbStack.Name = "rbStack";
+            this.rbStack.Size = new System.Drawing.Size(55, 20);
+            this.rbStack.TabIndex = 0;
+            this.rbStack.TabStop = true;
+            this.rbStack.Text = "DFS";
+            this.rbStack.UseVisualStyleBackColor = true;
+            // 
             // Pic
             // 
             this.Pic.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Pic.Location = new System.Drawing.Point(231, 0);
+            this.Pic.Location = new System.Drawing.Point(86, 0);
             this.Pic.Name = "Pic";
-            this.Pic.Size = new System.Drawing.Size(1551, 803);
+            this.Pic.Size = new System.Drawing.Size(1696, 803);
             this.Pic.TabIndex = 1;
             this.Pic.TabStop = false;
             this.Pic.Paint += new System.Windows.Forms.PaintEventHandler(this.Pic_Paint);
@@ -210,6 +247,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SpillBucket";
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pic)).EndInit();
             this.ResumeLayout(false);
 
@@ -228,6 +267,9 @@
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnClear;
         private System.Windows.Forms.PictureBox Pic;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbQueue;
+        private System.Windows.Forms.RadioButton rbStack;
     }
 }
 

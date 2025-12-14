@@ -91,18 +91,28 @@ namespace SpillBucketA3
             }
         }
 
+
+        // Spill Bucket using Stack (Depth First Search - DFS)
         public void Fill(Bitmap bm, int x, int y, Color New_Clr)
         {
+            // Get the color of the clicked pixel
             Color Old_Color = bm.GetPixel(x, y);
+
+            // Stack to store pixels to be filled
             Stack<Point> pixel = new Stack<Point>();
+
+            // Push starting point
             pixel.Push(new Point(x, y));
             bm.SetPixel(x, y, New_Clr);
             if (Old_Color == New_Clr) return;
-            while(pixel.Count > 0)
+
+            // Continue until stack is empty
+            while (pixel.Count > 0)
             {
                 Point pt = (Point)pixel.Pop();
                 if(pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
                 {
+                    // Check all four neighbors
                     Validate(bm, pixel, pt.X - 1, pt.Y, Old_Color, New_Clr);
                     Validate(bm, pixel, pt.X + 1, pt.Y, Old_Color, New_Clr);
                     Validate(bm, pixel, pt.X, pt.Y - 1, Old_Color, New_Clr);
@@ -111,12 +121,66 @@ namespace SpillBucketA3
             }
         }
 
+        // Spill Bucket using Queue (Breadth First Search - BFS)
+        public void FillQueue(Bitmap bm, int x, int y, Color New_Clr)
+        {
+            Color Old_Color = bm.GetPixel(x, y);
+            if (Old_Color == New_Clr) return;
+
+            Queue<Point> q = new Queue<Point>();
+            // Add starting point
+            q.Enqueue(new Point(x, y));
+            bm.SetPixel(x, y, New_Clr);
+
+            // Continue until queue is empty
+            while (q.Count > 0)
+            {
+                Point pt = q.Dequeue();
+
+                if (pt.X > 0 && pt.Y > 0 && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
+                {
+                    // Check neighboring pixels
+                    if (bm.GetPixel(pt.X - 1, pt.Y) == Old_Color)
+                    {
+                        bm.SetPixel(pt.X - 1, pt.Y, New_Clr);
+                        q.Enqueue(new Point(pt.X - 1, pt.Y));
+                    }
+                    if (bm.GetPixel(pt.X + 1, pt.Y) == Old_Color)
+                    {
+                        bm.SetPixel(pt.X + 1, pt.Y, New_Clr);
+                        q.Enqueue(new Point(pt.X + 1, pt.Y));
+                    }
+                    if (bm.GetPixel(pt.X, pt.Y - 1) == Old_Color)
+                    {
+                        bm.SetPixel(pt.X, pt.Y - 1, New_Clr);
+                        q.Enqueue(new Point(pt.X, pt.Y - 1));
+                    }
+                    if (bm.GetPixel(pt.X, pt.Y + 1) == Old_Color)
+                    {
+                        bm.SetPixel(pt.X, pt.Y + 1, New_Clr);
+                        q.Enqueue(new Point(pt.X, pt.Y + 1));
+                    }
+                }
+            }
+        }
+
+
         private void Pic_MouseClick(object sender, MouseEventArgs e)
         {
-            if(index == 6)
+            if (index == 6)
             {
                 Point pt = set_Point(Pic, e.Location);
-                Fill(bm, pt.X, pt.Y, New_Color);
+
+                if (rbStack.Checked)
+                {
+                    Fill(bm, pt.X, pt.Y, New_Color);      // Stack (DFS)
+                }
+                else if (rbQueue.Checked)
+                {
+                    FillQueue(bm, pt.X, pt.Y, New_Color); // Queue (BFS)
+                }
+
+                Pic.Refresh();
             }
         }
 
